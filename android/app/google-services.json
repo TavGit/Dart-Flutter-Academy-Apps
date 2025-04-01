@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "425716153057",
+    "project_id": "myapps-fa57e",
+    "storage_bucket": "myapps-fa57e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425716153057:android:a5e34d5becf5c1197a95a0",
+        "android_client_info": {
+          "package_name": "com.example.myacademy_apps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ-4-BovlllkqYoEr9wojcsuSscIawJ0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
