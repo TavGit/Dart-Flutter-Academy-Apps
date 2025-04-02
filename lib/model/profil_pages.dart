@@ -26,10 +26,18 @@ class _ProfilPagesState extends State<ProfilPages> {
       await user?.sendEmailVerification();
       Get.snackbar(
         'Link Terkirim',
-        'Silahkan cek inbox email anda, link emal verifikasi sudah terkirim',
+        '',
         snackPosition: SnackPosition.TOP,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.green,
         colorText: Colors.white,
+        messageText: Text(
+          'Silahkan cek inbox email anda, link emal verifikasi sudah terkirim',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       );
     } catch (error) {
       Get.snackbar(
@@ -44,10 +52,52 @@ class _ProfilPagesState extends State<ProfilPages> {
 
   // buat fungsi reload
   Future<void> reload() async {
+  try {
     await user?.reload();
     user = FirebaseAuth.instance.currentUser;
+
+    if (user != null && !user!.emailVerified) {
+      // Jika email belum diverifikasi, tampilkan Snackbar
+      Get.snackbar(
+        '','',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red[900],
+        titleText: Text(
+          'Silakan verifikasi email terlebih dahulu, baru klik tombol Refresh.',
+          style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        duration: Duration(seconds: 4),
+      );
+    } else {
+      // Jika email sudah diverifikasi, tampilkan pesan sukses
+      Get.snackbar(
+        'Berhasil!', '',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        messageText: Text(
+          'Email Sudah Terverifikasi',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 15,
+          ),
+        ),
+        duration: Duration(seconds: 4),
+      );
+    }
+
     setState(() {});
+  } catch (e) {
+    Get.snackbar(
+      'Error',
+      'Terjadi kesalahan saat memuat ulang',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.red[900],
+      colorText: Colors.white,
+    );
   }
+}
+
 
   // buat fungsi edit username
   Future<void> editUsername(String username) async {
@@ -55,30 +105,37 @@ class _ProfilPagesState extends State<ProfilPages> {
       context: context,
       builder: (context) {
         String tempInput = username;
-        return AlertDialog(
-          title: Text('Edit: $username', style: TextStyle(color: Colors.black)),
-          content: TextField(
-            autofocus: true,
-            decoration: InputDecoration(
-              hintText: "Buat Username baru",
-              hintStyle: TextStyle(color: Colors.grey),
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData.light(),
+          home: AlertDialog(
+            title: Text(
+              'Edit: $username',
+              style: TextStyle(color: Colors.black),
             ),
-            onChanged: (value) {
-              tempInput = value;
-            },
+            content: TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                hintText: "Buat Username baru",
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+              onChanged: (value) {
+                tempInput = value;
+              },
+            ),
+            actions: [
+              // cancel button
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Cancel', style: TextStyle(color: Colors.black)),
+              ),
+              // save button
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(tempInput),
+                child: Text('Save', style: TextStyle(color: Colors.black)),
+              ),
+            ],
           ),
-          actions: [
-            // cancel button
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Cancel', style: TextStyle(color: Colors.black)),
-            ),
-            // save button
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(tempInput),
-              child: Text('Save', style: TextStyle(color: Colors.black)),
-            ),
-          ],
         );
       },
     );
@@ -155,7 +212,14 @@ class _ProfilPagesState extends State<ProfilPages> {
                               Icons.close,
                               color: const Color.fromARGB(255, 255, 17, 0),
                             ),
-                            Text("Email Belum Terverifikasi"),
+                            Text(
+                              "Email Belum Terverifikasi",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -165,7 +229,17 @@ class _ProfilPagesState extends State<ProfilPages> {
                   actions: [
                     TextButton(
                       onPressed: verifikasi,
-                      child: Text("VERIFIKASI"),
+                      child: Text(
+                        "VERIFIKASI",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.lightBlue,
+                          decorationStyle: TextDecorationStyle.solid,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -178,17 +252,21 @@ class _ProfilPagesState extends State<ProfilPages> {
             ),
             if (user?.emailVerified != true)
               ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                 onPressed: reload,
-                icon: Icon(Icons.refresh, color: Colors.black,),
-                label: Text("Refresh", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+                icon: Icon(Icons.refresh, color: Colors.white),
+                label: Text(
+                  "Refresh",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: ListTile(
-                title: Text(
-                  'Username:',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                title: Text('Username:', style: TextStyle(fontSize: 20)),
                 subtitle: Text(getUserName(), style: TextStyle(fontSize: 20)),
                 trailing: IconButton(
                   onPressed: () async {
@@ -201,10 +279,7 @@ class _ProfilPagesState extends State<ProfilPages> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: ListTile(
-                title: Text(
-                  'Email: ',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                title: Text('Email: ', style: TextStyle(fontSize: 20)),
                 subtitle: Text(
                   '${user!.email}',
                   style: TextStyle(fontSize: 20),
@@ -214,10 +289,7 @@ class _ProfilPagesState extends State<ProfilPages> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: ListTile(
-                title: Text(
-                  'SignIn Method: ',
-                  style: TextStyle(fontSize: 20, color: Colors.black),
-                ),
+                title: Text('SignIn Method: ', style: TextStyle(fontSize: 20)),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [SizedBox(height: 4), Icon(Icons.email)],
@@ -230,29 +302,29 @@ class _ProfilPagesState extends State<ProfilPages> {
                 signOut();
                 Navigator.pop(context);
               },
-              color: Colors.grey[400] ?? Colors.grey,
-                enabled: true,
-                disabledColor: Colors.grey,
-                shadowDegree: ShadowDegree.light,
-                borderRadius: 30,
-                duration: 10,
-                height: 50,
-                width: 200,
+              color: Colors.red[400] ?? Colors.red,
+              enabled: true,
+              disabledColor: Colors.grey,
+              shadowDegree: ShadowDegree.light,
+              borderRadius: 30,
+              duration: 10,
+              height: 50,
+              width: 200,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.logout),
-                    SizedBox(width: 4),
-                    Text(
-                      'SignOut',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      ),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.logout, color: Colors.white),
+                  SizedBox(width: 4),
+                  Text(
+                    'SignOut',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

@@ -88,28 +88,68 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(padding: EdgeInsets.only(right: 240.0, bottom: 2.0, top: 80.0),
-              child: 
-              Text('SignUp', style: TextStyle(color: Colors.black ,fontSize: 40, fontWeight: FontWeight.bold),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(2.0),
+                  child: AspectRatio(
+                    aspectRatio: 1.2,
+                    child: Image.asset('assets/Images/Sign up.gif'),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0, bottom: 10.0,),
-                child: Text(
-                  'Hai!, Buat Akun anda, dan langsung belajar sekarang.',
-                  style: TextStyle(color: Colors.black),
+                Padding(
+                  padding: EdgeInsets.only(right: 240.0, bottom: 2.0),
+                  child: Text(
+                    'SignUp',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: TextField(
-                  controller: email,
+                Padding(
+                  padding: const EdgeInsets.only(right: 20.0, bottom: 10.0),
+                  child: Text(
+                    'Hai!, Buat Akun anda, dan langsung belajar sekarang.',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
+                  child: TextField(
+                    controller: email,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          style: BorderStyle.solid,
+                          width: 2.0,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(color: Colors.black, width: 2),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                      hintText: 'Masukkan email',
+                      prefixIcon: Icon(Icons.email),
+                      prefixIconColor: Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                TextField(
+                  controller: password,
+                  obscureText: _passwordObscure,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -124,120 +164,110 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     filled: true,
                     fillColor: Colors.grey[200],
-                    hintText: 'Masukkan email',
-                    suffixIcon: Icon(Icons.email),
+                    hintText: 'Masukkan password',
+                    prefixIcon: Icon(Icons.lock),
+                    prefixIconColor: Colors.black,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _passwordObscure = !_passwordObscure;
+                        });
+                      },
+                      icon: Icon(
+                        _passwordObscure
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                      ),
+                    ),
                     suffixIconColor: Colors.black,
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                controller: password,
-                obscureText: _passwordObscure,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      style: BorderStyle.solid,
-                      width: 2.0,
+                SizedBox(height: 20),
+                TextField(
+                  controller: confirmpassword,
+                  obscureText: _confrimpasswordObscure,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(
+                        style: BorderStyle.solid,
+                        width: 2.0,
+                      ),
                     ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.black, width: 2),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                  hintText: 'Masukkan password',
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _passwordObscure = !_passwordObscure;
-                      });
-                    },
-                    icon: Icon(
-                      _passwordObscure ? Icons.visibility : Icons.visibility_off,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.black, width: 2),
                     ),
-                  ),
-                  suffixIconColor: Colors.black,
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                controller: confirmpassword,
-                obscureText: _confrimpasswordObscure,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      style: BorderStyle.solid,
-                      width: 2.0,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.black, width: 2),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                  hintText: 'Masukkan konfirmasi password',
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _confrimpasswordObscure = !_confrimpasswordObscure;
-                      });
-                    },
-                    icon: Icon(
-                      _confrimpasswordObscure ? Icons.visibility : Icons.visibility_off,
-                    ),
-                  ),
-                  suffixIconColor: Colors.black,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'Dengan masuk Anda menyetujui kebijakan privasi dan syarat & ketentuan kami',
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ),
-              AnimatedButton(
-                onPressed: () => signUp(),
-                color: Colors.black87,
-                enabled: true,
-                disabledColor: Colors.grey,
-                shadowDegree: ShadowDegree.dark,
-                borderRadius: 30,
-                duration: 10,
-                height: 50,
-                width: 370,
-                child: Text(
-                  'SIGN UP',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
-              RichText(
-                text: TextSpan(
-                style: TextStyle(fontSize: 18, color: Colors.black),
-                children: [
-                  TextSpan(text: 'Sudah punya akun?'),
-                  TextSpan(text: ' '),
-                  TextSpan(
-                    text: 'Yuk Login!',
-                    style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold,),
-                    recognizer: TapGestureRecognizer()..onTap = () {
-                      Get.to(LoginPage());
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    hintText: 'Masukkan konfirmasi password',
+                    prefixIcon: Icon(Icons.lock),
+                    prefixIconColor: Colors.black,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _confrimpasswordObscure = !_confrimpasswordObscure;
+                        });
                       },
+                      icon: Icon(
+                        _confrimpasswordObscure
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                      ),
                     ),
-                  ]
+                    suffixIconColor: Colors.black,
+                  ),
                 ),
-              )
-            ],
+                Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text(
+                    'Dengan masuk Anda menyetujui kebijakan privasi dan syarat & ketentuan kami',
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                ),
+                AnimatedButton(
+                  onPressed: () => signUp(),
+                  color: Colors.black87,
+                  enabled: true,
+                  disabledColor: Colors.grey,
+                  shadowDegree: ShadowDegree.dark,
+                  borderRadius: 30,
+                  duration: 10,
+                  height: 50,
+                  width: 370,
+                  child: Text(
+                    'SIGN UP',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    children: [
+                      TextSpan(text: 'Sudah punya akun?'),
+                      TextSpan(text: ' '),
+                      TextSpan(
+                        text: 'Yuk Login!',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        recognizer:
+                            TapGestureRecognizer()
+                              ..onTap = () {
+                                Get.to(LoginPage());
+                              },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

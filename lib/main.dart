@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+// import 'package:myacademy_apps/Theme/theme.dart';
+import 'package:myacademy_apps/Theme/theme_provider.dart';
 import 'package:myacademy_apps/services/auth_gate.dart';
+import 'package:provider/provider.dart';
 import 'root/firebase_options.dart';
 
 void main() async {
@@ -9,7 +12,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +28,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthGate() ,
+      home: AuthGate(),
+      theme: Provider.of<ThemeProvider>(context).themeData
     );
   }
 }

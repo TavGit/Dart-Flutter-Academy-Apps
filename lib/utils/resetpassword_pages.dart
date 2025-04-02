@@ -29,7 +29,7 @@ class _ResetpasswordPagesState extends State<ResetpasswordPages> {
     } catch (error) {
       Get.snackbar(
         'Error',
-        error.toString(),
+        'Email belum di isi',
         snackPosition: SnackPosition.TOP,
         backgroundColor: Colors.red,
         colorText: Colors.white,
@@ -39,92 +39,90 @@ class _ResetpasswordPagesState extends State<ResetpasswordPages> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.only(right: 150.0, bottom: 2.0, top: 80.0),
-              child: 
-              Text('Reset Password', style: TextStyle(color: Colors.black ,fontSize: 30, fontWeight: FontWeight.bold),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      home: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+              Padding(padding: EdgeInsets.all(2.0),
+                child: AspectRatio(aspectRatio: 1, child: Image.asset('assets/Images/Forgot password.gif'),)
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0, bottom: 10.0,),
-                child: Text(
-                  'Anda bisa mengisi email, yang ingin anda reset password nya dan jika sudah klik tombol kirim!.',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: TextField(
-                  controller: email,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(style: BorderStyle.solid, width: 2.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: Colors.black, width: 2)
-                  ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Masukkan email',
-                    suffixIcon: Icon(Icons.email),
-                    suffixIconColor: Colors.black,
+              Padding(padding: EdgeInsets.only(right: 150.0, bottom: 2.0),
+                child: 
+                Text('Reset Password', style: TextStyle(color: Colors.black ,fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
-              ),
-            SizedBox(height: 20),
-            AnimatedButton(
-                onPressed: () => reset(),
-                color: Colors.black,
-                enabled: true,
-                disabledColor: Colors.grey,
-                shadowDegree: ShadowDegree.light,
-                borderRadius: 30,
-                duration: 10,
-                height: 50,
-                width: 370,
-                child: Text(
-                  'Kirim Link',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.only(right: 20.0, bottom: 10.0,),
+                  child: Text(
+                    'Anda bisa mengisi email, yang ingin anda reset password nya dan jika sudah klik tombol kirim!.',
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
-              ),
-              SizedBox(height: 30),
-              AnimatedButton(
-                onPressed: (() => Get.to(LoginPage())),
-                color: Colors.blue,
-                enabled: true,
-                disabledColor: Colors.grey,
-                shadowDegree: ShadowDegree.light,
-                borderRadius: 30,
-                duration: 10,
-                height: 50,
-                width: 200,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.arrow_circle_left),
-                    SizedBox(width: 4),
-                    Text(
-                      'Kembali',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
+                  child: TextField(
+                    controller: email,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(style: BorderStyle.solid, width: 2.0),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.black, width: 2)
                     ),
-                  ],
-                )
-              ),
-          ],
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                      hintText: 'Masukkan email',
+                      suffixIcon: Icon(Icons.email),
+                      suffixIconColor: Colors.black,
+                    ),
+                  ),
+                ),
+              SizedBox(height: 20),
+              AnimatedButton(
+                  onPressed: () => reset(),
+                  color: Colors.black,
+                  enabled: true,
+                  disabledColor: Colors.grey,
+                  shadowDegree: ShadowDegree.light,
+                  borderRadius: 30,
+                  duration: 10,
+                  height: 50,
+                  width: 370,
+                  child: Text(
+                    'Kirim Link',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                AnimatedButton(
+                  onPressed: (() => Get.to(LoginPage())),
+                  color: Colors.blue,
+                  enabled: true,
+                  disabledColor: Colors.grey,
+                  shadowDegree: ShadowDegree.light,
+                  borderRadius: 30,
+                  duration: 10,
+                  height: 50,
+                  width: 200,
+                  child:Text(
+                    'Kembali',
+                    style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
+                  )
+                ),
+              ],
+            ),
+          ),     
         ),
       ),
     );
