@@ -1,4 +1,3 @@
-import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -296,36 +295,7 @@ class _ProfilPagesState extends State<ProfilPages> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
-            AnimatedButton(
-              onPressed: () {
-                signOut();
-                Navigator.pop(context);
-              },
-              color: Colors.red[400] ?? Colors.red,
-              enabled: true,
-              disabledColor: Colors.grey,
-              shadowDegree: ShadowDegree.light,
-              borderRadius: 30,
-              duration: 10,
-              height: 50,
-              width: 200,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.logout, color: Colors.white),
-                  SizedBox(width: 4),
-                  Text(
-                    'SignOut',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            
           ],
         ),
       ),
