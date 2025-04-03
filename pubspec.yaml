@@ -68,6 +68,10 @@ flutter:
     - assets/Images/Mobile login.gif
     - assets/Images/Sign up.gif
     - assets/Images/Forgot password.gif
+    - assets/Images/dart.png
+    - assets/Images/flutter.png
+    - assets/Images/docDart.png
+    - assets/Images/docFlutter.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myacademy_apps/Theme/theme_provider.dart';
+import 'package:myacademy_apps/feature/Pengenalan-Dart/introduction_dart.dart';
+import 'package:myacademy_apps/feature/Pengenalan-Flutter/introduction_flutter.dart';
 import 'package:myacademy_apps/model/profil_pages.dart';
 import 'package:provider/provider.dart';
-import 'package:animated_button/animated_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,16 +23,15 @@ class _HomePageState extends State<HomePage> {
     await FirebaseAuth.instance.signOut();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     // buat fungsi setiap kali user mengganti username, maka tampil username baru nya
     User? user = FirebaseAuth.instance.currentUser;
     Future<void> refreshUser() async {
       await user?.reload();
       setState(() {});
     }
+
     refreshUser();
 
     return Scaffold(
@@ -59,16 +59,29 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            ListTile(
-              title: Text(
-                'Hai, ${user!.displayName} 👋',
+            UserAccountsDrawerHeader(
+              accountName: Text(
+                user?.displayName ?? 'Guest',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
+              accountEmail: Text(
+                user?.email ?? 'no-email@example.com',
+                style: TextStyle(),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: const Color.fromARGB(255, 6, 91, 187),
+                child: Text(
+                  user?.displayName?.substring(0, 1) ?? 'G',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
-            Divider(color: Colors.lightBlue, height: 20),
             SizedBox(height: 20),
             ListTile(
-              leading: Icon(Icons.account_circle, size: 30),
+              leading: Icon(Icons.person, size: 30),
               title: Text('Informasi Profil', style: TextStyle(fontSize: 20)),
               onTap: () {
                 Navigator.push(
@@ -79,60 +92,259 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.settings, size: 30),
               title: Text('Pengaturan', style: TextStyle(fontSize: 20)),
             ),
             SizedBox(height: 20),
             ListTile(
-              leading: Icon(Icons.question_answer),
-              title: Text('Q&A?', style: TextStyle(fontSize: 20)),
+              leading: Icon(Icons.info, size: 30),
+              title: Text('Tentang Aplikasi', style: TextStyle(fontSize: 20)),
             ),
-            SizedBox(height: 20),
-            ListTile(
-              leading: Icon(Icons.code),
-              title: Text('Tentang Developer', style: TextStyle(fontSize: 20)),
-            ),
-            SizedBox(height: 20),
-            Container(
-              height: 600,
-              alignment: Alignment.center,
-              child: AnimatedButton(
-                onPressed: () {
-                  signOut();
-                  Navigator.pop(context);
-                },
-                color: Colors.red[400] ?? Colors.red,
-                enabled: true,
-                disabledColor: Colors.grey,
-                shadowDegree: ShadowDegree.light,
-                borderRadius: 30,
-                duration: 10,
-                height: 50,
-                width: 200,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.logout, color: Colors.white),
-                    SizedBox(width: 4),
-                    Text(
-                      'SignOut',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
+            Divider(height: 250),
+            ElevatedButton.icon(
+              onPressed: () {
+                signOut();
+                Navigator.pop(context);
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(90, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
+                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                backgroundColor: const Color.fromARGB(255, 247, 16, 0),
+              ),
+              icon: Icon(Icons.logout, color: Colors.white, size: 20),
+              label: Text(
+                'SignOut',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
         ),
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('Hai! Welcome', style: TextStyle(fontSize: 20))],
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Introduction Dart',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            CustomCard(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => IntroDartPages()),
+                );
+              },
+              title: 'Pengenalan Dasar tentang Dart',
+              subtitle: 'Apa itu bahasa pemrogramman dart?',
+              color: Colors.purple,
+              image: Image.asset('assets/Images/dart.png'),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Introduction Flutter',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            CustomCard(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => IntroFlutterPages()),
+                );
+              },
+              title: 'Pengenalan Framework Flutter',
+              subtitle: 'Memahami Framework Flutter',
+              color: Colors.blue,
+              image: Image.asset('assets/Images/flutter.png'),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Dokumentasi',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            DocsDart(
+              onTap: () {},
+              title: 'Bahasa Pemrogramman Dart',
+              subtitle: 'Dokumentasi',
+              image: Image.asset('assets/Images/docDart.png'),
+              color: Colors.deepOrange,
+            ),
+            SizedBox(height: 10),
+            DocsFlutter(
+              onTap: () {},
+              title: 'Framework Flutter',
+              subtitle: 'Dokumentasi',
+              image: Image.asset('assets/Images/docFlutter.png'),
+              color: Colors.yellowAccent,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomCard extends StatelessWidget {
+  const CustomCard({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+
+  final VoidCallback onTap;
+  final String title;
+  final String subtitle;
+  final Image image;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 60, height: 50, child: image),
+            SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(subtitle, style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DocsDart extends StatelessWidget {
+  const DocsDart({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+
+  final VoidCallback onTap;
+  final String title;
+  final String subtitle;
+  final Image image;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 80, height: 80, child: image),
+            SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(subtitle, style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DocsFlutter extends StatelessWidget {
+  const DocsFlutter({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+
+  final VoidCallback onTap;
+  final String title;
+  final String subtitle;
+  final Image image;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 80, height: 80, child: image),
+            SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(subtitle, style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ],
         ),
       ),
     );
