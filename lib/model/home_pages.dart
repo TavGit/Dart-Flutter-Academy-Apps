@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> {
               title: 'Framework Flutter',
               subtitle: 'Dokumentasi',
               image: Image.asset('assets/Images/docFlutter.png'),
-              color: Colors.yellowAccent,
+              color: Colors.indigo,
             ),
           ],
         ),
