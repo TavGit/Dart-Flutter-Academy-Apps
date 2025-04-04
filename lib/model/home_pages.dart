@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myacademy_apps/Docs/Dokumentasi-Dart/dokumentasi_dart.dart';
+import 'package:myacademy_apps/Docs/Dokumentasi-Flutter/dokumentasi_flutter.dart';
 import 'package:myacademy_apps/Theme/theme_provider.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Dart/introduction_dart.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Flutter/introduction_flutter.dart';
@@ -184,7 +186,9 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 10),
             DocsDart(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DokumentasiDart()));
+              },
               title: 'Bahasa Pemrogramman Dart',
               subtitle: 'Dokumentasi',
               image: Image.asset('assets/Images/docDart.png'),
@@ -192,7 +196,9 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 10),
             DocsFlutter(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DokumentasiFlutter()));
+              },
               title: 'Framework Flutter',
               subtitle: 'Dokumentasi',
               image: Image.asset('assets/Images/docFlutter.png'),
@@ -322,6 +328,7 @@ class DocsFlutter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Container(
         margin: EdgeInsets.only(bottom: 16),
         padding: EdgeInsets.all(16),

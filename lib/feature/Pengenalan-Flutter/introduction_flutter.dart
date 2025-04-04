@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Flutter/ApaItu-Flutter/apaitu_flutter.dart';
+import 'package:myacademy_apps/feature/Pengenalan-Flutter/CaraKerja-Flutter/carakerja_flutter.dart';
+import 'package:myacademy_apps/feature/Pengenalan-Flutter/Keunggulan-Flutter/keunggulan_flutter.dart';
 
 class IntroFlutterPages extends StatefulWidget {
   const IntroFlutterPages({super.key});
@@ -48,12 +50,17 @@ class _IntroFlutterPagesState extends State<IntroFlutterPages> {
                   'Apa itu Flutter?',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text('Framework buat apa?, dan kenapa penting?'),
+                subtitle: Text('Framework buat apa?'),
               ),
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => KeunggulanFlutter()),
+              );
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
@@ -78,7 +85,13 @@ class _IntroFlutterPagesState extends State<IntroFlutterPages> {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => CarakerjaFlutter()),
+              );
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
@@ -98,8 +111,7 @@ class _IntroFlutterPagesState extends State<IntroFlutterPages> {
                   'Cara kerja framework Flutter',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text('Apat itu widget?, dll, secara singkat'),
-                onTap: () {},
+                subtitle: Text('Bagaimana cara kerja flutter?'),
               ),
             ),
           ),

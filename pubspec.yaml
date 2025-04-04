@@ -39,6 +39,7 @@ dependencies:
   get: ^4.7.2
   animated_button: ^0.3.1
   provider: ^6.1.4
+  flutter_highlight: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -72,7 +73,13 @@ flutter:
     - assets/Images/flutter.png
     - assets/Images/docDart.png
     - assets/Images/docFlutter.png
-  #   - images/a_dot_ham.jpeg
+  #   Flutter Images
+    - assets/Flutter-Images/Dasar-Flutter.jpeg
+    - assets/Flutter-Images/Widget.jpeg
+    - assets/Flutter-Images/State.jpeg
+    - assets/Flutter-Images/Form.jpeg
+    - assets/Flutter-Images/Navigasi.jpeg
+    - assets/Flutter-Images/Performance.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
