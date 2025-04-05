@@ -52,9 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(padding: EdgeInsets.all(2.0),
                 child: AspectRatio(aspectRatio: 1, child: Image.asset('assets/Images/Mobile login.gif'),)
                 ),
-                Padding(padding: EdgeInsets.only(right: 260.0, bottom: 2.0,),
+                Padding(padding: EdgeInsets.only(right: 300.0, bottom: 2.0,),
                 child: 
-                Text('Login', style: TextStyle(color: Colors.black ,fontSize: 20, fontWeight: FontWeight.bold),
+                Text('Login', style: TextStyle(color: Colors.black ,fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(

@@ -105,12 +105,12 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 240.0, bottom: 2.0),
+                  padding: EdgeInsets.only(right: 280.0, bottom: 2.0),
                   child: Text(
                     'SignUp',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -147,12 +147,10 @@ class _TentangPagesState extends State<TentangPages> {
     );
   }
 
-  void _launchUrl(String url) async {
+  Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Tidak bisa membuka $url';
-    }
+      if (!await launchUrl(uri)) {
+    throw Exception('Could not launch $url');
+  }
   }
 }
