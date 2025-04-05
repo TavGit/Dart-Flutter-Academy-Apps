@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           "Dart & Flutter Academy",
-          style: TextStyle(fontFamily: 'Jersey15-Regular', fontSize: 30),
+          style: TextStyle(fontFamily: 'Jersey15-Regular', fontSize: 20),
         ),
         actions: [
           IconButton(

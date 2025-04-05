@@ -110,7 +110,7 @@ class _SignupPageState extends State<SignupPage> {
                     'SignUp',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 40,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
