@@ -184,7 +184,7 @@ class _ProfilPagesState extends State<ProfilPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Info Profil")),
+      appBar: AppBar(title: Text("Info Profil", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

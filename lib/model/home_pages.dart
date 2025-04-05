@@ -4,7 +4,9 @@ import 'package:myacademy_apps/Docs/Dokumentasi-Flutter/dokumentasi_flutter.dart
 import 'package:myacademy_apps/Theme/theme_provider.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Dart/introduction_dart.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Flutter/introduction_flutter.dart';
+import 'package:myacademy_apps/model/Q&A.dart';
 import 'package:myacademy_apps/model/profil_pages.dart';
+import 'package:myacademy_apps/model/tentang_pages.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -94,13 +96,19 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             ListTile(
-              leading: Icon(Icons.settings, size: 30),
-              title: Text('Pengaturan', style: TextStyle(fontSize: 20)),
+              leading: Icon(Icons.chat, size: 30),
+              title: Text('Q&A?', style: TextStyle(fontSize: 20)),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => QAPages()));
+              },
             ),
             SizedBox(height: 20),
             ListTile(
               leading: Icon(Icons.info, size: 30),
               title: Text('Tentang Aplikasi', style: TextStyle(fontSize: 20)),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TentangPages()));
+              },
             ),
             Divider(height: 250),
             ElevatedButton.icon(
@@ -187,7 +195,10 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
             DocsDart(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DokumentasiDart()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DokumentasiDart()),
+                );
               },
               title: 'Bahasa Pemrogramman Dart',
               subtitle: 'Dokumentasi',
@@ -197,7 +208,10 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
             DocsFlutter(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DokumentasiFlutter()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DokumentasiFlutter()),
+                );
               },
               title: 'Framework Flutter',
               subtitle: 'Dokumentasi',
