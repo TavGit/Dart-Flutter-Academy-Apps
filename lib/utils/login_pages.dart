@@ -1,4 +1,3 @@
-import 'package:animated_button/animated_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -52,11 +51,21 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(padding: EdgeInsets.all(2.0),
                 child: AspectRatio(aspectRatio: 1, child: Image.asset('assets/Images/Mobile login.gif'),)
                 ),
-                Padding(padding: EdgeInsets.only(right: 300.0, bottom: 2.0,),
-                child: 
-                Text('Login', style: TextStyle(color: Colors.black ,fontSize: 25, fontWeight: FontWeight.bold),
+                SizedBox(height: 3,),
+                Container(
+                    width: double.infinity,
+                    child: 
+                    Text(
+                      'Login', 
+                      style: 
+                      TextStyle(
+                        color: Colors.black ,
+                        fontSize: 25, 
+                        fontWeight: FontWeight.bold
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
-                ),
                 Padding(
                   padding: const EdgeInsets.only(right: 20.0, bottom: 10.0,),
                   child: Text(
@@ -119,31 +128,30 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10),
                 TextButton(
                   onPressed: (() => Get.to(ResetpasswordPages())),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 230.0, bottom: 10.0),
+                  child: Container(
+                    width: double.infinity,
                     child: Text(
                       'Lupa Password?',
                       style: TextStyle(fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.right,
                     ),
                   ),
                 ),
-                  AnimatedButton(
+                ElevatedButton.icon(
                   onPressed: () => signIn(),
-                  color: Colors.black,
-                  enabled: true,
-                  disabledColor: Colors.grey,
-                  shadowDegree: ShadowDegree.light,
-                  borderRadius: 30,
-                  duration: 10,
-                  height: 50,
-                  width: 370,
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(350, 50),
+                    maximumSize: Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    backgroundColor: Colors.black,
+                  ),
+                  icon: Icon(Icons.login, color: Colors.white, size: 20),
+                  label: Text(
+                    'Login',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
                 SizedBox(height: 30),

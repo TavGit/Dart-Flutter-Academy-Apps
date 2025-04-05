@@ -1,4 +1,3 @@
-import 'package:animated_button/animated_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:get/get.dart';
@@ -104,8 +103,9 @@ class _SignupPageState extends State<SignupPage> {
                     child: Image.asset('assets/Images/Sign up.gif'),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: 280.0, bottom: 2.0),
+                SizedBox(height: 3,),
+                Container(
+                  width: double.infinity,
                   child: Text(
                     'SignUp',
                     style: TextStyle(
@@ -113,6 +113,7 @@ class _SignupPageState extends State<SignupPage> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
                 Padding(
@@ -225,23 +226,21 @@ class _SignupPageState extends State<SignupPage> {
                     style: TextStyle(color: Colors.grey[600]),
                   ),
                 ),
-                AnimatedButton(
+                ElevatedButton.icon(
                   onPressed: () => signUp(),
-                  color: Colors.black87,
-                  enabled: true,
-                  disabledColor: Colors.grey,
-                  shadowDegree: ShadowDegree.dark,
-                  borderRadius: 30,
-                  duration: 10,
-                  height: 50,
-                  width: 370,
-                  child: Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(350, 50),
+                    maximumSize: Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    backgroundColor: Colors.black,
+                  ),
+                  icon: Icon(Icons.person_add, color: Colors.white, size: 20),
+                  label: Text(
+                    'SignUp',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
                 SizedBox(height: 30),
