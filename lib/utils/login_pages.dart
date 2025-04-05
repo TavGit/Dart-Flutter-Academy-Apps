@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: AspectRatio(aspectRatio: 1, child: Image.asset('assets/Images/Mobile login.gif'),)
                 ),
                 SizedBox(height: 3,),
-                Container(
+                SizedBox(
                     width: double.infinity,
                     child: 
                     Text(
@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10),
                 TextButton(
                   onPressed: (() => Get.to(ResetpasswordPages())),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: Text(
                       'Lupa Password?',
