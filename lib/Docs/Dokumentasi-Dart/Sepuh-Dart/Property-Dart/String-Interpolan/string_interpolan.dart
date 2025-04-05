@@ -63,7 +63,7 @@ class StringInterpolan extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'Bisa menggunakan dua cara:\n1. \$\{isi variable}\n2. \$\isivariable',
+                'Bisa menggunakan dua cara:\n1. \${isi variable}\n2. \$isivariable',
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: 8),

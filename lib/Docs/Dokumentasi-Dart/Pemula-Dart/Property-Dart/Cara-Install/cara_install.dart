@@ -98,7 +98,7 @@ C: dart --version
               Text('1. Install homebrew jika diperlukan'),
               Text('2. Tambahkan offical tap'),
               HighlightView(
-                '\$\ brew tap dart-lang/dart',
+                '\$ brew tap dart-lang/dart',
                 language: 'terminal',
                 theme: atomOneDarkTheme,
                 padding: EdgeInsets.all(12),
@@ -106,7 +106,7 @@ C: dart --version
               ),
               Text('3. lanjut install dart sdk nya'),
               HighlightView(
-                '\$\ brew install dart',
+                '\$ brew install dart',
                 language: 'terminal',
                 theme: atomOneDarkTheme,
                 padding: EdgeInsets.all(12),
@@ -124,7 +124,7 @@ C: dart --version
               Text('3. Perbarui file indeks paket dan instal paket HTTP aman.'),
               SizedBox(height: 5,),
               HighlightView(
-                '\$\ sudo apt-get update && sudo apt-get install apt-transport-https',
+                '\$ sudo apt-get update && sudo apt-get install apt-transport-https',
                 language: 'terminal',
                 theme: atomOneDarkTheme,
                 padding: EdgeInsets.all(12),
@@ -134,7 +134,7 @@ C: dart --version
               Text('4. Unduh dan tambahkan kunci publik Google Linux GPG.'),
               SizedBox(height: 5,),
               HighlightView(
-                '\$\ sudo apt-get update && sudo apt-get install apt-transport-https',
+                '\$ sudo apt-get update && sudo apt-get install apt-transport-https',
                 language: 'terminal',
                 theme: atomOneDarkTheme,
                 padding: EdgeInsets.all(12),
@@ -145,7 +145,7 @@ C: dart --version
               SizedBox(height: 5,),
               HighlightView(
                 '''
-\$\ echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' \
+\$ echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' 
   | sudo tee /etc/apt/sources.list.d/dart_stable.list
                 ''',
                 language: 'terminal',
@@ -157,7 +157,7 @@ C: dart --version
               Text('6. terakhir tinggali install dart nya'),
               SizedBox(height: 5,),
               HighlightView(
-                '\$\ sudo apt-get install dart',
+                '\$ sudo apt-get install dart',
                 language: 'terminal',
                 theme: atomOneDarkTheme,
                 padding: EdgeInsets.all(12),
