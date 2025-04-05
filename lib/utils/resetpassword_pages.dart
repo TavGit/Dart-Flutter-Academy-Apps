@@ -85,23 +85,20 @@ class _ResetpasswordPagesState extends State<ResetpasswordPages> {
                   ),
                 ),
               SizedBox(height: 20),
-              AnimatedButton(
+              ElevatedButton(
                   onPressed: () => reset(),
-                  color: Colors.black,
-                  enabled: true,
-                  disabledColor: Colors.grey,
-                  shadowDegree: ShadowDegree.light,
-                  borderRadius: 30,
-                  duration: 10,
-                  height: 50,
-                  width: 370,
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(350, 50),
+                    maximumSize: Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    backgroundColor: Colors.black,
+                  ),
                   child: Text(
                     'Kirim Link',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
                 SizedBox(height: 30),
