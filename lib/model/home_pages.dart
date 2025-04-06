@@ -245,7 +245,6 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Expanded(
         child: Container(
           margin: EdgeInsets.only(bottom: 16),
           padding: EdgeInsets.all(14),
@@ -271,7 +270,6 @@ class CustomCard extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
