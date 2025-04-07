@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myacademy_apps/Docs/Dokumentasi-Dart/dokumentasi_dart.dart';
 import 'package:myacademy_apps/Docs/Dokumentasi-Flutter/dokumentasi_flutter.dart';
+import 'package:myacademy_apps/Quiz/quiz_pages.dart';
 import 'package:myacademy_apps/Theme/theme_provider.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Dart/introduction_dart.dart';
 import 'package:myacademy_apps/feature/Pengenalan-Flutter/introduction_flutter.dart';
@@ -133,92 +134,117 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Introduction Dart',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            CustomCard(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => IntroDartPages()),
-                );
-              },
-              title: 'Pengenalan Dasar tentang Dart',
-              subtitle: 'Apa itu bahasa pemrogramman dart?',
-              color: Colors.purple,
-              image: Image.asset('assets/Images/dart.png'),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Introduction Flutter',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            CustomCard(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => IntroFlutterPages()),
-                );
-              },
-              title: 'Pengenalan Framework Flutter',
-              subtitle: 'Memahami Framework Flutter',
-              color: Colors.blue,
-              image: Image.asset('assets/Images/flutter.png'),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Dokumentasi',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            DocsDart(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DokumentasiDart()),
-                );
-              },
-              title: 'Bahasa Pemrogramman Dart',
-              subtitle: 'Dokumentasi',
-              image: Image.asset('assets/Images/docDart.png'),
-              color: Colors.deepOrange,
-            ),
-            SizedBox(height: 10),
-            DocsFlutter(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DokumentasiFlutter()),
-                );
-              },
-              title: 'Framework Flutter',
-              subtitle: 'Dokumentasi',
-              image: Image.asset('assets/Images/docFlutter.png'),
-              color: Colors.indigo,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Introduction Dart',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              CustomCard(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => IntroDartPages()),
+                  );
+                },
+                title: 'Pengenalan Dasar tentang Dart',
+                subtitle: 'Apa itu bahasa pemrogramman dart?',
+                color: Colors.purple,
+                image: Image.asset('assets/Images/dart.png'),
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Introduction Flutter',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              CustomCard(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => IntroFlutterPages()),
+                  );
+                },
+                title: 'Pengenalan Framework Flutter',
+                subtitle: 'Memahami Framework Flutter',
+                color: Colors.blue,
+                image: Image.asset('assets/Images/flutter.png'),
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Dokumentasi',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              DocsDart(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DokumentasiDart()),
+                  );
+                },
+                title: 'Bahasa Pemrogramman Dart',
+                subtitle: 'Dokumentasi',
+                image: Image.asset('assets/Images/docDart.png'),
+                color: Colors.deepOrange,
+              ),
+              SizedBox(height: 10),
+              DocsFlutter(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DokumentasiFlutter()),
+                  );
+                },
+                title: 'Framework Flutter',
+                subtitle: 'Dokumentasi',
+                image: Image.asset('assets/Images/docFlutter.png'),
+                color: Colors.indigo,
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Quiz Dart & Flutter',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              DocsDart(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuizPages()),
+                  );
+                },
+                title: 'Quiz Dart dan Flutter',
+                subtitle: 'Menguji seberapa jauh pemahaman\nanda mengenai dart dan flutter',
+                image: Image.asset('assets/Images/quiz.png'),
+                color: Colors.lightBlueAccent,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -325,6 +351,55 @@ class DocsDart extends StatelessWidget {
 
 class DocsFlutter extends StatelessWidget {
   const DocsFlutter({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+
+  final VoidCallback onTap;
+  final String title;
+  final String subtitle;
+  final Image image;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 80, height: 80, child: image),
+            SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(subtitle, style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Quiz extends StatelessWidget {
+  const Quiz({
     super.key,
     required this.onTap,
     required this.title,

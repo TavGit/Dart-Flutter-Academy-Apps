@@ -17,7 +17,7 @@ class _DokumentasiDartState extends State<DokumentasiDart> {
       length: 3, 
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Dokumentasi Dart'),
+          title: Text('Dokumentasi Dart', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
           bottom: TabBar(
             labelColor: const Color.fromARGB(221, 3, 212, 202),
             indicatorColor: const Color.fromARGB(255, 0, 248, 12),
