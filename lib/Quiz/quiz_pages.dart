@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myacademy_apps/Quiz/Screen/quiz_dart_pages.dart';
+import 'package:myacademy_apps/Quiz/Screen/quiz_flutter_pages.dart';
+import 'package:myacademy_apps/model/home_pages.dart';
 
 class QuizPages extends StatelessWidget {
   const QuizPages({super.key});
@@ -11,16 +14,26 @@ class QuizPages extends StatelessWidget {
           'Quiz Dart dan Flutter',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
+        leading: IconButton(
+          onPressed: () {
+             Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+              (route) => false,
+            );
+          }, 
+          icon: Icon(Icons.arrow_back),
+        ),
       ),
       body: ListView(
         children: [
           SizedBox(height: 10),
           InkWell(
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => SejarahDart()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuizDartPages()),
+              );
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -44,12 +57,17 @@ class QuizPages extends StatelessWidget {
           ),
           SizedBox(height: 10),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuizFlutterPages()),
+              );
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue),
+                border: Border.all(color: const Color.fromARGB(255, 0, 140, 255), width: 2),
               ),
               child:  ListTile(
                 contentPadding: EdgeInsets.symmetric(
