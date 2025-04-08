@@ -76,7 +76,6 @@ Aplikasi ini cocok untuk:
 Untuk pertanyaan lebih lanjut atau diskusi, silakan hubungi:
 
 - **Developer**: [TavGit](https://github.com/TavGit)
-- **Email**: gustavcodes.dev@gmail.com
 
 Semoga aplikasi ini bisa membantu proses belajar kamu dengan lebih seru dan efisien! 🚀
 
@@ -91,6 +90,5 @@ Hak Cipta © 2025 TavGit. Semua hak dilindungi undang-undang.
 Aplikasi Dart & Flutter Academy Apps dilindungi oleh hak cipta.
 Seluruh kode, desain, dan konten dalam aplikasi ini tidak boleh disalin, dimodifikasi, disebarluaskan, atau digunakan kembali, baik secara keseluruhan maupun sebagian, tanpa izin tertulis dari pengembang.
 
-Untuk kerja sama atau perizinan penggunaan, silakan hubungi: gustavcodes.dev@gmail.com
 
 
