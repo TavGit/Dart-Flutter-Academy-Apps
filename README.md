@@ -52,7 +52,7 @@ Berikut cuplikan tampilan aplikasi Dart & Flutter Academy Apps:
   <img src="https://i.imgur.com/b6XDcrT.jpeg" alt="Signup" width="110"/>
   <img src="https://i.imgur.com/KDn6YQg.jpeg" alt="Mode terang" width="110"/>
   <img src="https://i.imgur.com/bF9jQqX.jpeg" alt="Mode gelap" width="110"/>
-  <img src="https://i.imgur.com/L27kkDS.jpeg" alt="Profil" width="110"/>
+  <img src="https://i.imgur.com/00dKc4q.jpeg" alt="Profil" width="110"/>
   <img src="https://i.imgur.com/0eTEhQ0.jpeg" alt="Quiz interaktif" width="110"/>
   <img src="https://i.imgur.com/x88J8ey.jpeg" alt="Quiz selesai" width="110"/>
 </div>
