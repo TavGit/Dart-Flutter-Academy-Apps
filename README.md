@@ -42,7 +42,7 @@ Firebase menggunakan jalur komunikasi HTTPS dan SDK resmi, memastikan keamanan, 
 
 Berikut cuplikan tampilan aplikasi Dart & Flutter Academy Apps:
 
-- Tampilan halaman login/register
+- Tampilan halaman login dan signup
 - Tampilan kuis interaktif
 - Mode terang dan gelap
 - Halaman profil pengguna
