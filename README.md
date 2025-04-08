@@ -48,13 +48,13 @@ Berikut cuplikan tampilan aplikasi Dart & Flutter Academy Apps:
 - Halaman profil pengguna
   
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="https://i.imgur.com/Uj1VWsr.jpeg" alt="Login" width="100"/>
-  <img src="https://i.imgur.com/b6XDcrT.jpeg" alt="Signup" width="100"/>
-  <img src="https://i.imgur.com/KDn6YQg.jpeg" alt="Mode terang" width="100"/>
-  <img src="https://i.imgur.com/bF9jQqX.jpeg" alt="Mode gelap" width="100"/>
-  <img src="https://i.imgur.com/L27kkDS.jpeg" alt="Profil" width="100"/>
-  <img src="https://i.imgur.com/0eTEhQ0.jpeg" alt="Quiz interaktif" width="100"/>
-  <img src="https://i.imgur.com/x88J8ey.jpeg" alt="Quiz selesai" width="100"/>
+  <img src="https://i.imgur.com/Uj1VWsr.jpeg" alt="Login" width="130"/>
+  <img src="https://i.imgur.com/b6XDcrT.jpeg" alt="Signup" width="130"/>
+  <img src="https://i.imgur.com/KDn6YQg.jpeg" alt="Mode terang" width="130"/>
+  <img src="https://i.imgur.com/bF9jQqX.jpeg" alt="Mode gelap" width="130"/>
+  <img src="https://i.imgur.com/L27kkDS.jpeg" alt="Profil" width="130"/>
+  <img src="https://i.imgur.com/0eTEhQ0.jpeg" alt="Quiz interaktif" width="130"/>
+  <img src="https://i.imgur.com/x88J8ey.jpeg" alt="Quiz selesai" width="130"/>
 </div>
 
 
