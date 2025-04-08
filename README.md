@@ -73,11 +73,13 @@ Created with ❤️ by [TavGit](https://github.com/TavGit)
 
 ---
 
-📄 Lisensi
-Hak Cipta © 2025 TavGit. Semua hak dilindungi undang-undang.
+📄 Lisensi 
+Hak Cipta © 2025 TavGit. Semua hak dilindungi undang-undang. 
+![License](https://img.shields.io/badge/license-Proprietary-red)
 
 Aplikasi Dart & Flutter Academy Apps dilindungi oleh hak cipta.
 Seluruh kode, desain, dan konten dalam aplikasi ini tidak boleh disalin, dimodifikasi, disebarluaskan, atau digunakan kembali, baik secara keseluruhan maupun sebagian, tanpa izin tertulis dari pengembang.
 
 Untuk kerja sama atau perizinan penggunaan, silakan hubungi: gustavcodes.dev@gmail.com
+
 
