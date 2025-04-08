@@ -69,13 +69,23 @@ Aplikasi ini cocok untuk:
 - 🧪 **Instruktur atau Dosen** yang ingin menggunakan aplikasi ini sebagai media pendukung pembelajaran di kelas.
 - 🧠 **Pengembang Flutter Junior** yang ingin memperkuat pemahaman fundamental melalui kuis dan materi dasar.
 
+
+
+
+## ✍️ Dibuat Secara Mandiri
+Aplikasi Dart & Flutter Academy Apps ini sepenuhnya dibuat secara mandiri oleh saya, mulai dari konsep,alur aplikasi, perancangan UI/UX, penulisan kode program, integrasi dengan Firebase, hingga penambahan fitur-fitur seperti mode gelap/terang dan kuis interaktif.
+
+Pembuatan aplikasi ini juga menjadi bagian dari proses belajar dan eksplorasi saya dalam mendalami Flutter serta memperkuat pemahaman terhadap konsep-konsep dasar pengembangan aplikasi mobile.
+
+Saya berharap hasil karya ini bisa bermanfaat bagi siapa pun yang ingin belajar Flutter dengan cara yang lebih menyenangkan dan terstruktur.
+
 ---
 
 ## 📞 Kontak
 
 Untuk pertanyaan lebih lanjut atau diskusi, silakan hubungi:
 
-- **Developer**: [TavGit](https://github.com/TavGit)
+- **Developer**: Muhammad Gustav Ibrahim
 
 Semoga aplikasi ini bisa membantu proses belajar kamu dengan lebih seru dan efisien! 🚀
 
