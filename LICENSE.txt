@@ -1,0 +1,20 @@
+Copyright © 2025 TavGit. All rights reserved.
+
+This software and its associated documentation files (the "Software") are the proprietary property of TavGit. No part of this Software, including but not limited to its source code, design, features, documentation, and any related materials, may be copied, modified, published, distributed, sublicensed, or sold without the prior written consent of TavGit.
+
+Unauthorized use, reproduction, modification, reverse-engineering, or distribution of this Software or any portion thereof is strictly prohibited and may result in severe civil and criminal penalties. Violators will be prosecuted to the maximum extent permitted by law.
+
+The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, non-infringement, or uninterrupted availability. In no event shall the developer or copyright holder be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from the use of or inability to use this Software.
+
+For licensing inquiries, commercial use, or distribution permissions, please contact:
+
+Email: gustavocodes.dev@gmail.com  
+GitHub: https://github.com/TavGit
+
+---
+
+This license applies to the following project:
+
+Project Name: Dart & Flutter Academy Apps  
+Author: TavGit  
+Year: 2025
