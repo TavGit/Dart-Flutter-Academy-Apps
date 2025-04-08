@@ -55,10 +55,10 @@ List<QuizModel> question = [
   QuizModel(
     "Perintah apa untuk membuat project pertama dart?", 
     {
-      "dengan perintah \'flutter create nama_project\'": false,
-      "dengan perintah \'dart create nama_project\'": true,
-      "dengan perintah \'sudo apt install dart\'": false,
-      "dengan perintah\n\'sudo apt dart create nama_project\'": false
+      "dengan perintah 'flutter create nama_project'": false,
+      "dengan perintah 'dart create nama_project'": true,
+      "dengan perintah 'sudo apt install dart'": false,
+      "dengan perintah\n'sudo apt dart create nama_project'": false
     },
   ),
   QuizModel(
