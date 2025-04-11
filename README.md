@@ -81,6 +81,13 @@ Saya berharap hasil karya ini bisa bermanfaat bagi siapa pun yang ingin belajar 
 
 ---
 
+## 📢 Download This Application 
+
+- On Uptodown:
+- <a href='https://dart-and-flutter-academy.en.uptodown.com/android' title='Download Dart & Flutter Academy' >
+  <img src='https://stc.utdstc.com/img/mediakit/download-gio-big-w.png' alt='Download Dart & Flutter Academy'>
+  </a>
+
 ## 📞 Kontak
 
 Untuk pertanyaan lebih lanjut atau diskusi, silakan hubungi:
