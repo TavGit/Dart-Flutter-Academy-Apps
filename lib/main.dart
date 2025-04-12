@@ -9,14 +9,12 @@ import 'root/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
       child: const MyApp(),
-    )
+    ),
   );
 }
 
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: AuthGate(),
-      theme: Provider.of<ThemeProvider>(context).themeData
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }

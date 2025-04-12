@@ -24,7 +24,7 @@ class _TentangPagesState extends State<TentangPages> {
           _buildSectionTitle('Informasi Aplikasi'),
           const SizedBox(height: 8),
           _buildInfoTile(Icons.phone_android, 'Nama Aplikasi', 'Dart & Flutter Academy'),
-          _buildInfoTile(Icons.system_security_update, 'Versi Aplikasi', '1.0.0'),
+          _buildInfoTile(Icons.system_security_update, 'Versi Aplikasi', '1.0.1'),
           _buildInfoTile(Icons.person, 'Developer', 'Muhammad Gustav Ibrahim'),
           _buildInfoTile(
             Icons.description,

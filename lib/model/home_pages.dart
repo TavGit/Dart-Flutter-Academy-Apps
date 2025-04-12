@@ -239,7 +239,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
                 title: 'Quiz Dart dan Flutter',
-                subtitle: 'Menguji seberapa jauh pemahaman\nanda mengenai dart dan flutter',
+                subtitle: 'Menguji seberapa jauh pemahaman anda mengenai dart dan flutter',
                 image: Image.asset('assets/Images/quiz.png'),
                 color: Colors.lightBlueAccent,
               ),
@@ -282,16 +282,19 @@ class CustomCard extends StatelessWidget {
             children: [
               SizedBox(width: 60, height: 50, child: image),
               SizedBox(width: 16),
-              Column(
+              Expanded(
+                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 4),
-                  Text(subtitle, style: TextStyle(fontSize: 14)),
-                ],
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 4),
+                    Text(subtitle, style: TextStyle(fontSize: 14), overflow: TextOverflow.ellipsis, maxLines: 2,),
+                  ],
+                ),
               ),
             ],
           ),
@@ -331,16 +334,19 @@ class DocsDart extends StatelessWidget {
           children: [
             SizedBox(width: 80, height: 80, child: image),
             SizedBox(width: 16),
-            Column(
+            Expanded(
+              child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 4),
-                Text(subtitle, style: TextStyle(fontSize: 14)),
-              ],
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 4),
+                  Text(subtitle, style: TextStyle(fontSize: 14), overflow: TextOverflow.ellipsis, maxLines: 2,),
+                ],
+              ),
             ),
           ],
         ),
@@ -380,16 +386,19 @@ class DocsFlutter extends StatelessWidget {
           children: [
             SizedBox(width: 80, height: 80, child: image),
             SizedBox(width: 16),
-            Column(
+            Expanded(
+              child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 4),
-                Text(subtitle, style: TextStyle(fontSize: 14)),
-              ],
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 4),
+                  Text(subtitle, style: TextStyle(fontSize: 14), overflow: TextOverflow.ellipsis, maxLines: 2,),
+                ],
+              ),
             ),
           ],
         ),
@@ -418,31 +427,34 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 16),
-        padding: EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color, width: 2),
-        ),
-        child: Row(
-          children: [
-            SizedBox(width: 80, height: 80, child: image),
-            SizedBox(width: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        child: Container(
+          margin: EdgeInsets.only(bottom: 16),
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: color, width: 2),
+          ),
+          child: Row(
+            children: [
+              SizedBox(width: 80, height: 80, child: image),
+              SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(height: 4),
+                    Text(subtitle, style: TextStyle(fontSize: 12), maxLines: 2,),
+                  ],
                 ),
-                SizedBox(height: 4),
-                Text(subtitle, style: TextStyle(fontSize: 14)),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
-      ),
     );
   }
 }
